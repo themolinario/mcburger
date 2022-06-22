@@ -1,10 +1,17 @@
 import DAO from "../../../dao";
+import isEmpty from "../../../utils/isEmpty";
 
 const search = async(req, res) => {
   let {title} = req.fields;
 
   let products;
   let count;
+
+  if(isEmpty(title)) {
+    return res.status(400).json({
+      title: 'title-required',
+    });
+  }
 
   try {
     products = await DAO.Products.findProductsByTitle(title);

@@ -2,7 +2,7 @@ import DAO from "../../../dao";
 import isEmpty from "../../../utils/isEmpty";
 
 const add = async(req, res) => {
-  let {orderNumber, timestamp, status, totalPrice, currency, products} = req.fields;
+  let {orderNumber, status, totalPrice, currency, products} = req.fields;
 
   let order;
 
@@ -17,12 +17,21 @@ const add = async(req, res) => {
   }
 
   try {
-    order = await DAO.Orders.addOrders({
+    order = await DAO.Orders.addOrder({
       orderNumber: orderNumber,
-      timestamp: timestamp,
       status: status,
+      totalPrice: totalPrice,
+      currency: currency,
+      products: products,
     })
   }catch (e) {
-
+    return res.status(500).json({ status: 'error', message: 'database write error', generic: true });
   }
+
+  order = order.toObject();
+  order.id = order._id;
+
+  res.status(200).json({ status: "success", order });
 };
+
+export default add;

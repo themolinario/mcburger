@@ -28,7 +28,6 @@ const add = async(req, res) => {
       owner,
     });
   } catch (e) {
-    console.log(e);
     return res.status(500).json({ status: 'error', message: 'database write error', generic: true });
   }
 

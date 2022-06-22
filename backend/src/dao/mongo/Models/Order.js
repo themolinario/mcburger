@@ -12,7 +12,7 @@ const OrderSchema = new Schema({
     type: Date,
     default: Date.now,
   },
-  status: String || '',
+  status: String || 'uncompleted',
   totalPrice: Number,
   currency: String,
   products: [{

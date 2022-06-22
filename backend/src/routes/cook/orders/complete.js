@@ -1,33 +1,33 @@
 import DAO from "../../../dao";
 
-const remove = async(req, res) => {
+const complete = async(req, res) =>{
   let {id} = req.fields;
 
-  let product;
+  let order;
 
   try {
-    product = await DAO.Products.findProductById(id);
+    order = await DAO.Orders.findOrderById(id);
   } catch (e) {
     return res.status(500).json({
       id: "database-read-error",
     });
   }
 
-  if (!product) {
+  if (!order) {
     return res.status(400).json({
-      id: "product-not-found",
+      id: "order-not-found",
     });
   }
 
   try {
-    product = await DAO.Products.removeProductById(id);
+    order = await DAO.Orders.removeOrderById(id);
   } catch (e) {
     return res.status(500).json({
       id: "database-read-error",
     });
   }
 
-  res.status(200).json({ status: "success", product });
+  res.status(200).json({ status: "success", order });
 };
 
-export default remove;
+export default complete;
