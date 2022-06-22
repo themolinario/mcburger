@@ -1,10 +1,8 @@
 import DAO from "../../index";
-import config from "../../../../config";
-import Product from "../Models/Product";
 
 
 
-const addProduct = async (data) => {
+const addProduct = async(data) => {
 
   const product = new DAO.Mongo.Models.Product({
     picture: data.picture,

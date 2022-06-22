@@ -4,6 +4,7 @@ import Users from './Users';
 import Versioning from './Versioning';
 import Products from "./Products";
 import Logs from "./Logs";
+import Orders from "./Orders";
 
 const Models = {
   Mailbox,
@@ -11,7 +12,8 @@ const Models = {
   Users,
   Versioning,
   Products,
-  Logs
+  Logs,
+  Orders,
 };
 
 export default Models;

@@ -4,12 +4,18 @@ const { Schema } = mongoose;
 const { ObjectId } = Schema.Types;
 
 const OrderSchema = new Schema({
+  orderNumber: {
+    type: Number,
+    require: true,
+  },
   timestamp: {
     type: Date,
     default: Date.now,
   },
-
-  Products: [{
+  status: String || '',
+  totalPrice: Number,
+  currency: String,
+  products: [{
     type: ObjectId,
     ref: 'Product',
   }],
