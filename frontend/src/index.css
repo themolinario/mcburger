@@ -33,3 +33,29 @@ body{
 .NavBar{
   color: black;
 }
+
+.HomeContainer{
+  display: flex;
+  flex-direction: column;
+  background: white;
+  padding: 20px;
+  align-items: center;
+}
+
+h1{
+  font-family: monospace;
+  font-weight: 700;
+  letter-spacing: .2rem;
+  color: inherit;
+  padding: 10px;
+  display: flex;
+}
+
+h2{
+  font-family: monospace;
+  font-weight: 700;
+  letter-spacing: .2rem;
+  color: inherit;
+  padding: 10px;
+  display: flex;
+}
