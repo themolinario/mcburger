@@ -6,7 +6,7 @@ import Signup from "./pages/Sign-up";
 import Menu from "./pages/Menu";
 import Support from "./pages/Support";
 import CustomerMenu from "./pages/customer/CustomerMenu";
-import Cart from "./pages/customer/Cart";
+import Ordini from "./pages/customer/CustomerOrders";
 import CustomerSupport from "./pages/customer/CustomerSupport";
 
 const routes = [{
@@ -65,11 +65,11 @@ const routes = [{
     ]
   },
   {
-    path: 'customer/cart',
-    element: <Cart />,
+    path: 'customer/ordini',
+    element: <Ordini />,
     children: [
       { path: 'customer/menu', element: <Navigate to="/pages/customer/CustomerMenu"/>},
-      { path: 'customer/cart', element: <Navigate to="/pages/customer/Cart"/>},
+      { path: 'customer/ordini', element: <Navigate to="/pages/customer/Cart"/>},
       { path: 'customer/support', element: <Navigate to="/pages/customer/CustomerSupport"/>},
     ]
   },
@@ -78,7 +78,7 @@ const routes = [{
     element: <CustomerSupport />,
     children: [
       { path: 'customer/menu', element: <Navigate to="/pages/customer/CustomerMenu"/>},
-      { path: 'customer/cart', element: <Navigate to="/pages/customer/Cart"/>},
+      { path: 'customer/ordini', element: <Navigate to="/pages/customer/Cart"/>},
       { path: 'customer/support', element: <Navigate to="/pages/customer/CustomerSupport"/>},
     ]
   },

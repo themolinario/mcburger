@@ -23,7 +23,7 @@ export default function MenuImageListCustomer() {
             position="below"
           />
           <Button variant="contained" onClick= {() =>{
-            alert('Aggiunto al carrello!')
+            alert('Aggiunto al carrello!');
           }}>Metti nel carrello</Button>
         </ImageListItem>
       ))}

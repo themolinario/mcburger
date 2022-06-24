@@ -3,27 +3,39 @@ import axios from 'axios';
 
 export default class ImportMenu extends React.Component {
   state = {
-    products: []
+    title: '',
+
   }
 
-  componentDidMount() {
-    axios.get(`https://jsonplaceholder.typicode.com/users`)
+  handleChange = event => {
+    this.setState({ title: event.target.value });
+  }
+
+  handleSubmit = event => {
+    event.preventDefault();
+
+    const product = {
+      title: this.state.title
+    };
+
+    axios.post(`http://localhost/api/v1/admin/products/search`, { product })
       .then(res => {
-        const products = res.data;
-        this.setState({ products });
+        console.log(res);
+        console.log(res.data);
       })
   }
 
   render() {
     return (
-      <ul>
-        {
-          this.state.products
-            .map(person =>
-              <li key={person.id}>{person.name}</li>
-            )
-        }
-      </ul>
+      <div>
+        <form onSubmit={this.handleSubmit}>
+          <label>
+            Person Name:
+            <input type="text" name="name" onChange={this.handleChange} />
+          </label>
+          <button type="submit">Add</button>
+        </form>
+      </div>
     )
   }
 }

@@ -15,7 +15,8 @@ import LunchDiningIcon from "@mui/icons-material/LunchDining";
 import ContactSupportIcon from "@mui/icons-material/ContactSupport";
 import { useNavigate} from "react-router-dom";
 
-let pages = [ {title:'Menu', path: '/customer/menu'}, {title: 'Cart', path: '/customer/cart'}];
+
+let pages = [ {title:'Menu', path: '/customer/menu'}, {title: 'Ordini', path: '/customer/ordini'}];
 let settings = [{title: 'Supporto', path: '/customer/support'}, { title:'Logout', path: '/'}];
 
 const ResponsiveAppBarCustomer = () => {

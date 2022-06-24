@@ -74,6 +74,14 @@ body{
   align-items: center;
 }
 
+.Cart{
+  display: flex;
+  flex-direction: column;
+  background: #48443b;
+  padding: 20px;
+  align-items: center;
+}
+
 h1{
   font-family: monospace;
   font-weight: 700;
