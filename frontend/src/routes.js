@@ -8,6 +8,7 @@ import Support from "./pages/Support";
 import CustomerMenu from "./pages/customer/CustomerMenu";
 import Ordini from "./pages/customer/CustomerOrders";
 import CustomerSupport from "./pages/customer/CustomerSupport";
+import CookSupport from "./pages/cook/CookSupport";
 
 const routes = [{
   path: '/login',
@@ -80,6 +81,14 @@ const routes = [{
       { path: 'customer/menu', element: <Navigate to="/pages/customer/CustomerMenu"/>},
       { path: 'customer/ordini', element: <Navigate to="/pages/customer/Cart"/>},
       { path: 'customer/support', element: <Navigate to="/pages/customer/CustomerSupport"/>},
+    ]
+  },
+  {
+    path : 'cook/support',
+    element : <CookSupport />,
+    children : [
+      {path : 'cook/orders' , element: <Navigate to= "/pages/cook/Orders"/>},
+      {path : 'cook/support' , element: <Navigate to= "/pages/cook/CookSupport"/>}
     ]
   },
   { path: '*', element: <Navigate to="/404" /> }];
