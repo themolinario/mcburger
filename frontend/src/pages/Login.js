@@ -11,13 +11,9 @@ function Login() {
     <div className="Login">
       <div>
         <ResponsiveAppBarLogin className="NavBar"/>
-
       </div>
       <div className="LoginBox">
         <Container>
-          <div>
-
-          </div>
           <div>
             <Box sx={{ display: 'flex', alignItems: 'flex-end' }}>
               <TextField id="username" label="Username or email: " variant="standard" />

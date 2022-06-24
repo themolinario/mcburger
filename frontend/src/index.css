@@ -8,7 +8,17 @@
   align-items: center;
 }
 
-#username{
+.Sign-UpBox {
+  max-width: 330px;
+  margin: 100px auto;
+  display: flex;
+  flex-direction: column;
+  background: white;
+  padding: 10px;
+  align-items: center
+}
+
+#username , #email , #firstName , #lastName{
   padding: 10px;
   display: flex;
 }
@@ -18,7 +28,7 @@
   display: flex;
 }
 
-#loginButton{
+#loginButton , #registerButton{
   margin: 50px auto;
   padding: 10px 30px 10px 30px;
   display: flex;
