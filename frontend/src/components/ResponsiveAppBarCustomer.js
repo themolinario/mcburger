@@ -15,10 +15,10 @@ import LunchDiningIcon from "@mui/icons-material/LunchDining";
 import ContactSupportIcon from "@mui/icons-material/ContactSupport";
 import { useNavigate} from "react-router-dom";
 
-let pages = [ {title:'Home', path: '/'}, {title:'Login', path:'/login'}, {title:'Sign-up', path:'/signup'}];
+let pages = [ {title:'Menu', path: '/customer/menu'}, {title: 'Cart', path: '/customer/cart'}];
 let settings = ['Supporto'];
 
-const ResponsiveAppBarLogin = () => {
+const ResponsiveAppBarCustomer = () => {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
   const [anchorElUser, setAnchorElUser] = React.useState(null);
   const navigate = useNavigate();
@@ -47,7 +47,7 @@ const ResponsiveAppBarLogin = () => {
             variant="h6"
             noWrap
             component="a"
-            href="/"
+            href="/customer/menu"
             sx={{
               mr: 2,
               display: { xs: 'none', md: 'flex' },
@@ -105,7 +105,7 @@ const ResponsiveAppBarLogin = () => {
             variant="h5"
             noWrap
             component="a"
-            href=""
+            href="/customer/menu"
             sx={{
               mr: 2,
               display: { xs: 'flex', md: 'none' },
@@ -161,7 +161,7 @@ const ResponsiveAppBarLogin = () => {
               {settings.map((setting) => (
                 <MenuItem key={setting} onClick={() =>{
                   handleCloseUserMenu();
-                  navigate('/support');
+                  navigate('/customer/support');
                 }}>
                   <Typography textAlign="center">{setting}</Typography>
                 </MenuItem>
@@ -173,4 +173,4 @@ const ResponsiveAppBarLogin = () => {
     </AppBar>
   );
 };
-export default ResponsiveAppBarLogin;
+export default ResponsiveAppBarCustomer;

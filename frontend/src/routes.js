@@ -5,6 +5,9 @@ import Home from "./pages/Home";
 import Signup from "./pages/Sign-up";
 import Menu from "./pages/Menu";
 import Support from "./pages/Support";
+import CustomerMenu from "./pages/customer/CustomerMenu";
+import Cart from "./pages/customer/Cart";
+import CustomerSupport from "./pages/customer/CustomerSupport";
 
 const routes = [{
   path: '/login',
@@ -50,6 +53,33 @@ const routes = [{
       { path: '', element: <Navigate to="/pages/Home"/>},
       { path: 'login', element: <Navigate to="/pages/Login" /> },
       { path: 'signup', element: <Navigate to="/pages/Sign-up"/>},
+    ]
+  },
+  {
+    path: 'customer/menu',
+    element: <CustomerMenu />,
+    children: [
+      { path: 'customer/menu', element: <Navigate to="/pages/customer/CustomerMenu"/>},
+      { path: 'customer/cart', element: <Navigate to="/pages/customer/Cart"/>},
+      { path: 'customer/support', element: <Navigate to="/pages/customer/CustomerSupport"/>},
+    ]
+  },
+  {
+    path: 'customer/cart',
+    element: <Cart />,
+    children: [
+      { path: 'customer/menu', element: <Navigate to="/pages/customer/CustomerMenu"/>},
+      { path: 'customer/cart', element: <Navigate to="/pages/customer/Cart"/>},
+      { path: 'customer/support', element: <Navigate to="/pages/customer/CustomerSupport"/>},
+    ]
+  },
+  {
+    path: 'customer/support',
+    element: <CustomerSupport />,
+    children: [
+      { path: 'customer/menu', element: <Navigate to="/pages/customer/CustomerMenu"/>},
+      { path: 'customer/cart', element: <Navigate to="/pages/customer/Cart"/>},
+      { path: 'customer/support', element: <Navigate to="/pages/customer/CustomerSupport"/>},
     ]
   },
   { path: '*', element: <Navigate to="/404" /> }];
