@@ -35,6 +35,12 @@
 
 }
 
+#sendButton {
+  background: black;
+  margin : 8px;
+}
+
+
 body{
   background-image:url('Food_Pattern_5_01.jpg') ;
   background-size:cover;
