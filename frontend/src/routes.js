@@ -4,6 +4,7 @@ import Login from "./pages/Login";
 import Home from "./pages/Home";
 import Signup from "./pages/Sign-up";
 import Menu from "./pages/Menu";
+import Support from "./pages/Support";
 
 const routes = [{
   path: '/login',
@@ -41,6 +42,15 @@ const routes = [{
       { path: 'login', element: <Navigate to="/pages/Login" /> },
       { path: 'signup', element: <Navigate to="/pages/Sign-up"/>},
       ]
+  },
+  {
+    path: '/support',
+    element: <Support />,
+    children: [
+      { path: '', element: <Navigate to="/pages/Home"/>},
+      { path: 'login', element: <Navigate to="/pages/Login" /> },
+      { path: 'signup', element: <Navigate to="/pages/Sign-up"/>},
+    ]
   },
   { path: '*', element: <Navigate to="/404" /> }];
 

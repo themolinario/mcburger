@@ -138,7 +138,7 @@ const ResponsiveAppBarLogin = () => {
             <Tooltip title="Open settings">
               <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
                 <Avatar>
-                  <ContactSupportIcon/>
+                  <ContactSupportIcon />
                 </Avatar>
               </IconButton>
             </Tooltip>
@@ -159,7 +159,10 @@ const ResponsiveAppBarLogin = () => {
               onClose={handleCloseUserMenu}
             >
               {settings.map((setting) => (
-                <MenuItem key={setting} onClick={handleCloseUserMenu}>
+                <MenuItem key={setting} onClick={() =>{
+                  handleCloseUserMenu();
+                  navigate('/support');
+                }}>
                   <Typography textAlign="center">{setting}</Typography>
                 </MenuItem>
               ))}

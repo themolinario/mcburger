@@ -1,6 +1,6 @@
 .LoginBox {
   max-width: 330px;
-  margin: 200px auto;
+  margin: 100px auto;
   display: flex;
   flex-direction: column;
   background: white;
@@ -53,6 +53,14 @@ body{
 }
 
 .MenuContainer{
+  display: flex;
+  flex-direction: column;
+  background: white;
+  padding: 20px;
+  align-items: center;
+}
+
+.SupportContainer{
   display: flex;
   flex-direction: column;
   background: white;
