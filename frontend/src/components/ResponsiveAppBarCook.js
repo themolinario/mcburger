@@ -16,7 +16,7 @@ import ContactSupportIcon from "@mui/icons-material/ContactSupport";
 import { useNavigate} from "react-router-dom";
 
 let pages = [ {title:'Menu', path: '/customer/menu'}, {title: 'Cart', path: '/customer/cart'}];
-let settings = ['Supporto'];
+let settings = [{title: 'Supporto', path: '/customer/support'}, { title:'Logout', path: '/'}];
 
 const ResponsiveAppBarCook = () => {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
@@ -158,12 +158,12 @@ const ResponsiveAppBarCook = () => {
               open={Boolean(anchorElUser)}
               onClose={handleCloseUserMenu}
             >
-              {settings.map((setting) => (
-                <MenuItem key={setting} onClick={() =>{
+              {settings.map((settings) => (
+                <MenuItem key={settings.title} onClick={() =>{
                   handleCloseUserMenu();
-                  navigate('/customer/support');
+                  navigate(settings.path);
                 }}>
-                  <Typography textAlign="center">{setting}</Typography>
+                  <Typography textAlign="center">{settings.title}</Typography>
                 </MenuItem>
               ))}
             </Menu>

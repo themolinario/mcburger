@@ -13,7 +13,7 @@ import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
 import LunchDiningIcon from "@mui/icons-material/LunchDining";
 import ContactSupportIcon from "@mui/icons-material/ContactSupport";
-import { useNavigate} from "react-router-dom";
+import {useNavigate} from "react-router-dom";
 
 let pages = [ {title:'Home', path: '/'}, {title:'Login', path:'/login'}, {title:'Sign-up', path:'/signup'}];
 let settings = ['Supporto'];
