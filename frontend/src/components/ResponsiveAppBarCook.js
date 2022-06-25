@@ -47,7 +47,7 @@ const ResponsiveAppBarCook = () => {
             variant="h6"
             noWrap
             component="a"
-            href="/customer/menu"
+            href=""
             sx={{
               mr: 2,
               display: { xs: 'none', md: 'flex' },
@@ -100,12 +100,11 @@ const ResponsiveAppBarCook = () => {
               ))}
             </Menu>
           </Box>
-          <LunchDiningIcon sx={{ display: { xs: 'flex', md: 'none' }, mr: 1 }} />
           <Typography
             variant="h5"
             noWrap
             component="a"
-            href="/customer/menu"
+            href="/cook/orders"
             sx={{
               mr: 2,
               display: { xs: 'flex', md: 'none' },

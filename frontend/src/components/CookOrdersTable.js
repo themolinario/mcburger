@@ -27,7 +27,7 @@ const columns = [
     headerName: "N°",
     width: 100
   },
-  { field: "ProductTitle", headerName: "Product Title", width: 300 },
+  { field: "ProductTitle", headerName: "Product Title", width: 250 },
   {
     field: "NotReady",
     width: 300,

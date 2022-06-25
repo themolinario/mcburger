@@ -89,7 +89,8 @@ const routes = [{
     element : <CookSupport />,
     children : [
       {path : 'cook/orders' , element: <Navigate to= "/pages/cook/Orders"/>},
-      {path : 'cook/support' , element: <Navigate to= "/pages/cook/CookSupport"/>}
+      {path : 'cook/support' , element: <Navigate to= "/pages/cook/CookSupport"/>},
+      {path : '' , element: <Navigate to= "/pages/Home"/>}
     ]
   },
   {
