@@ -2,7 +2,7 @@ import * as React from "react";
 import Container from "@mui/material/Container";
 import '../../index.css';
 import Button from "@mui/material/Button";
-import {useSelector} from "react-redux";
+
 import ResponsiveAppBarAdmin from "../../components/ResponsiveAppBarAdmin";
 import AddIcon from '@mui/icons-material/Add';
 import MenuImageListAdmin from "../../components/MenuImageListAdmin";
@@ -13,7 +13,7 @@ import UploadButton from "../../components/UploadButton";
 
 
 function AdminMenu() {
-  const user = useSelector((state) => state.auth.user || {});
+
   const [open, setOpen] = React.useState(false);
   const handleClose = () => {
     setOpen(false);
