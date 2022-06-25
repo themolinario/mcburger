@@ -17,7 +17,7 @@ function AdminHome() {
         <h2 id="Welcome2">Accedi alla gestione del Menu</h2>
         <div>
           <Button id="MenuButton" variant="contained" color="secondary" onClick={() => {
-            navigate('/admin/AdminMenu');
+            navigate('/admin/menu');
           }}>Menu</Button>
         </div>
         <div>
