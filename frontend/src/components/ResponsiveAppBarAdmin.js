@@ -16,7 +16,7 @@ import ContactSupportIcon from "@mui/icons-material/ContactSupport";
 import { useNavigate } from "react-router-dom";
 
 
-let pages = [ {title:'Home', path: '/admin/home'}, {title: 'Menu', path: '/admin/menu'}];
+let pages = [ {title:'Home', path: '/admin/home'}, {title: 'Menu', path: '/admin/menu'}, {title: 'Gestione Utenti', path: '/admin/userHandle'}];
 let settings = [{ title:'Logout', path: '/'},{title: 'Supporto', path: '/admin/support'}];
 
 const ResponsiveAppBarAdmin = () => {
@@ -106,7 +106,7 @@ const ResponsiveAppBarAdmin = () => {
             variant="h5"
             noWrap
             component="a"
-            href="/customer/menu"
+            href="/admin/home"
             sx={{
               mr: 2,
               display: { xs: 'flex', md: 'none' },

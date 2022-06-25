@@ -11,6 +11,9 @@ import CustomerSupport from "./pages/customer/CustomerSupport";
 import CookSupport from "./pages/cook/CookSupport";
 import Orders from "./pages/cook/Orders"
 import AdminHome from "./pages/admin/AdminHome";
+import AdminUserHandle from "./pages/admin/AdminUserHandle";
+import AdminSupport from "./pages/admin/AdminSupport";
+import AdminMenu from "./pages/admin/AdminMenu";
 
 const routes = [{
   path: '/login',
@@ -108,8 +111,8 @@ const routes = [{
     children: [
       { path: 'admin/home', element: <Navigate to="/pages/admin/AdminHome"/>},
       { path: 'admin/menu', element: <Navigate to="/pages/admin/AdminMenu" /> },
-      { path : 'admin/support' , element: <Navigate to= "/pages/cook/AdminSupport"/>},
-      { path : 'admin/userHandle' , element: <Navigate to= "/pages/cook/AdminUserHandle"/>}
+      { path : 'admin/support' , element: <Navigate to= "/pages/admin/AdminSupport"/>},
+      { path : 'admin/userHandle' , element: <Navigate to= "/pages/admin/AdminUserHandle"/>}
     ]
   },
   {
@@ -118,27 +121,29 @@ const routes = [{
     children : [
       { path: 'admin/home', element: <Navigate to="/pages/admin/AdminHome"/>},
       { path: 'admin/menu', element: <Navigate to="/pages/admin/AdminMenu" /> },
-      { path : 'admin/support' , element: <Navigate to= "/pages/cook/AdminSupport"/>},
-      { path : 'admin/userHandle' , element: <Navigate to= "/pages/cook/AdminUserHandle"/>}
+      { path : 'admin/support' , element: <Navigate to= "/pages/admin/AdminSupport"/>},
+      { path : 'admin/userHandle' , element: <Navigate to= "/pages/admin/AdminUserHandle"/>}
     ]
   },
   {
-    path :'admin/menu',
+    path :'admin/support',
     element: <AdminSupport/>,
     children : [
       { path: 'admin/home', element: <Navigate to="/pages/admin/AdminHome"/>},
       { path: 'admin/menu', element: <Navigate to="/pages/admin/AdminMenu" /> },
-      { path : 'admin/support' , element: <Navigate to= "/pages/cook/AdminSupport"/>},
-      { path : 'admin/userHandle' , element: <Navigate to= "/pages/cook/AdminUserHandle"/>}
+      { path : 'admin/support' , element: <Navigate to= "/pages/admin/AdminSupport"/>},
+      { path : 'admin/userHandle' , element: <Navigate to= "/pages/admin/AdminUserHandle"/>}
+      ]
   },
   {
-    path :'admin/menu',
+    path :'admin/userHandle',
     element: <AdminUserHandle/>,
     children : [
       { path: 'admin/home', element: <Navigate to="/pages/admin/AdminHome"/>},
       { path: 'admin/menu', element: <Navigate to="/pages/admin/AdminMenu" /> },
-      { path : 'admin/support' , element: <Navigate to= "/pages/cook/AdminSupport"/>},
-      { path : 'admin/userHandle' , element: <Navigate to= "/pages/cook/AdminUserHandle"/>}
+      { path : 'admin/support' , element: <Navigate to= "/pages/admin/AdminSupport"/>},
+      { path : 'admin/userHandle' , element: <Navigate to= "/pages/admin/AdminUserHandle"/>}
+      ]
   },
   { path: '*', element: <Navigate to="/404" /> }];
 
