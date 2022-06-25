@@ -6,9 +6,11 @@ import ResponsiveAppBarCustomer from "../../components/ResponsiveAppBarCustomer"
 import Button from "@mui/material/Button";
 import Backdrop from "@mui/material/Backdrop";
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
+import {useSelector} from "react-redux";
 
 
 function CustomerMenu() {
+  const user = useSelector((state) => state.auth.user || {});
   const [open, setOpen] = React.useState(false);
   const handleClose = () => {
     setOpen(false);
@@ -23,6 +25,9 @@ function CustomerMenu() {
       </div>
       <Container className="MenuContainer" maxWidth="lg">
         <div>
+          <div>
+            <h1>Benvenuto, {user.firstName}</h1>
+          </div>
           <Button onClick={handleToggle} variant="contained">
             <ShoppingCartIcon />
             Show Cart
