@@ -1,102 +1,89 @@
-import * as React from "react";
-import { DataGrid } from "@material-ui/data-grid";
-import { createStyles, makeStyles } from "@material-ui/core/styles";
-import { Button } from "@material-ui/core";
+import * as React from 'react';
+import Table from '@mui/material/Table';
+import TableBody from '@mui/material/TableBody';
+import TableCell from '@mui/material/TableCell';
+import TableContainer from '@mui/material/TableContainer';
+import TableHead from '@mui/material/TableHead';
+import TableRow from '@mui/material/TableRow';
+import Paper from '@mui/material/Paper';
+import FormControl from '@mui/material/FormControl';
+import MenuItem from '@mui/material/MenuItem';
+import Select from '@mui/material/Select';
 
-const useStyles = makeStyles((theme) =>
-  createStyles({
-    root: {}
-  })
-);
 
-const handleClick = (event, cellValues) => {
-  console.log(cellValues.row);
-};
-
-const handleCellClick = (param, event) => {
-  event.stopPropagation();
-};
-
-const handleRowClick = (param, event) => {
-  event.stopPropagation();
-};
-
-const columns = [
-  {
-    field: "OrderNumber",
-    headerName: "N°",
-    width: 100
-  },
-  { field: "ProductTitle", headerName: "Product Title", width: 250 },
-  {
-    field: "NotReady",
-    width: 300,
-    renderCell: (cellValues) => {
-      return (
-        <Button id = 'NotReady'
-          variant="contained"
-          onClick={(event) => {
-            handleClick(event, cellValues);
-          }}
-        >
-          Not Ready
-        </Button>
-      );
-    }
-  },
-  {
-    field: "Preparing",
-    width: 300,
-    renderCell: (cellValues) => {
-      return (
-        <Button id = 'Preparing'
-                variant="contained"
-                onClick={(event) => {
-                  handleClick(event, cellValues);
-                }}
-        >
-          Preparing
-        </Button>
-      );
-    }
-  },
-  {
-    field: "Ready",
-    width: 150,
-    renderCell: (cellValues) => {
-      return (
-        <Button id = 'Ready'
-          variant="contained"
-          onClick={(event) => {
-            handleClick(event, cellValues);
-          }}
-        >
-          Ready
-        </Button>
-      );
-    }
-  }
-];
+function createData(orderNumber, products) {
+  return { orderNumber, products};
+}
 
 const rows = [
-  { id: 1, OrderNumber: "212", ProductTitle: "Hamburger"},
-  { id: 2, OrderNumber: "118", ProductTitle: "Fries"},
+  createData(1, ['Molinari',' ', 'Molinari']),
+  createData(2, 'Ladisa'),
 ];
 
-export default function CookOrdersTable() {
-  const classes = useStyles();
+export default function CooksOrdersTable() {
+  const [state, setState] = React.useState('Uncompleted');
+  let style = {color: 'white'};
+  if (state === 'Uncompleted') {
+    style = {
+      color: 'white',
+      backgroundColor: 'red'
+    }
+  } else if (state === 'Preparing'){
+    style = {
+      color: 'white',
+      backgroundColor: 'grey'
+    }
+  } else if (state === 'Completed'){
+    style = {
+      color: 'white',
+      backgroundColor: 'green'
+    }
+  }
+
+  const handleChange = (event) => {
+    setState(event.target.value);
+
+  };
 
   return (
-    <div style={{ height: 500, width: "100%" }}>
-      <DataGrid
-        rowHeight={120}
-        className={classes.root}
-        rows={rows}
-        columns={columns}
-        pageSize={5}
-        onCellClick={handleCellClick}
-        onRowClick={handleRowClick}
-      />
-    </div>
+    <TableContainer component={Paper}>
+      <Table sx={{ minWidth: 650 }} aria-label="simple table">
+        <TableHead>
+          <TableRow>
+            <TableCell>Numero Ordine</TableCell>
+            <TableCell >Prodotti</TableCell>
+            <TableCell>Stato</TableCell>
+          </TableRow>
+        </TableHead>
+        <TableBody>
+          {rows.map((row) => (
+            <TableRow
+              key={row.orderNumber}
+            >
+              <TableCell>
+                {row.orderNumber}
+              </TableCell>
+              <TableCell >{row.products}</TableCell>
+              <TableCell>
+                <FormControl fullWidth>
+                  <Select
+                    labelId="demo-simple-select-label"
+                    id="demo-simple-select"
+                    value={state}
+                    label="Stato"
+                    onChange={handleChange}
+                    style={style}
+                    >
+                    <MenuItem value='Uncompleted'>Da Cominciare</MenuItem>
+                    <MenuItem value='Preparing' >In Preparazione</MenuItem>
+                    <MenuItem value='Completed' >Completato</MenuItem>
+                  </Select>
+                </FormControl>
+              </TableCell>
+            </TableRow>
+          ))}
+        </TableBody>
+      </Table>
+    </TableContainer>
   );
 }
