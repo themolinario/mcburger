@@ -15,8 +15,8 @@ import LunchDiningIcon from "@mui/icons-material/LunchDining";
 import ContactSupportIcon from "@mui/icons-material/ContactSupport";
 import { useNavigate} from "react-router-dom";
 
-let pages = [ {title:'Menu', path: '/customer/menu'}, {title: 'Cart', path: '/customer/cart'}];
-let settings = [{title: 'Supporto', path: '/customer/support'}, { title:'Logout', path: '/'}];
+let pages = [ {title:'Ordini', path: '/cook/orders'}];
+let settings = [{title: 'Supporto', path: '/cook/support'}, { title:'Logout', path: '/'}];
 
 const ResponsiveAppBarCook = () => {
   const [anchorElNav, setAnchorElNav] = React.useState(null);

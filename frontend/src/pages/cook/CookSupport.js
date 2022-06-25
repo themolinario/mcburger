@@ -1,18 +1,17 @@
 import * as React from "react";
-import ResponsiveAppBarCustomer from "../../components/ResponsiveAppBarCustomer";
 import Container from "@mui/material/Container";
 import '../../index.css';
-import MultilineTextArea from "../../components/MultilineTextArea";
 import Button from "@mui/material/Button";
 import SendIcon from "@mui/icons-material/Send";
 import CookSupportTable from "../../components/CookSupportTable";
+import ResponsiveAppBarCook from "../../components/ResponsiveAppBarCook";
 
 
 function CustomerSupport() {
   return (
-    <div className="CustomerSupport">
+    <div className="CookSupport">
       <div>
-        <ResponsiveAppBarCustomer className="NavBar"/>
+        <ResponsiveAppBarCook className="NavBar"/>
       </div>
       <Container className="SupportContainer" maxWidth="lg">
         <hgroup>

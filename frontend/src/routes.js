@@ -9,6 +9,7 @@ import CustomerMenu from "./pages/customer/CustomerMenu";
 import Ordini from "./pages/customer/CustomerOrders";
 import CustomerSupport from "./pages/customer/CustomerSupport";
 import CookSupport from "./pages/cook/CookSupport";
+import Orders from "./pages/cook/Orders"
 
 const routes = [{
   path: '/login',
@@ -86,6 +87,14 @@ const routes = [{
   {
     path : 'cook/support',
     element : <CookSupport />,
+    children : [
+      {path : 'cook/orders' , element: <Navigate to= "/pages/cook/Orders"/>},
+      {path : 'cook/support' , element: <Navigate to= "/pages/cook/CookSupport"/>}
+    ]
+  },
+  {
+    path : 'cook/orders',
+    element : <Orders />,
     children : [
       {path : 'cook/orders' , element: <Navigate to= "/pages/cook/Orders"/>},
       {path : 'cook/support' , element: <Navigate to= "/pages/cook/CookSupport"/>}

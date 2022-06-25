@@ -74,6 +74,14 @@ body{
   align-items: center;
 }
 
+.OrdersContainer{
+  display: flex;
+  flex-direction: column;
+  background: white;
+  padding: 20px;
+  align-items: center;
+}
+
 .Cart{
   display: flex;
   flex-direction: column;
@@ -104,4 +112,19 @@ h1{
   margin: 50px auto;
   padding: 20px 40px 20px 40px;
   display: flex;
+}
+
+#NotReady {
+  color : white;
+  background-color: red;
+}
+
+#Ready {
+  color : white;
+  background-color: green;
+}
+
+#Preparing {
+  color : white;
+  background-color: grey;
 }
