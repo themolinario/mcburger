@@ -10,6 +10,7 @@ import Ordini from "./pages/customer/CustomerOrders";
 import CustomerSupport from "./pages/customer/CustomerSupport";
 import CookSupport from "./pages/cook/CookSupport";
 import Orders from "./pages/cook/Orders"
+import AdminHome from "./pages/admin/AdminHome";
 
 const routes = [{
   path: '/login',
@@ -90,7 +91,7 @@ const routes = [{
     children : [
       {path : 'cook/orders' , element: <Navigate to= "/pages/cook/Orders"/>},
       {path : 'cook/support' , element: <Navigate to= "/pages/cook/CookSupport"/>},
-      {path : '' , element: <Navigate to= "/pages/Home"/>}
+
     ]
   },
   {
@@ -100,6 +101,44 @@ const routes = [{
       {path : 'cook/orders' , element: <Navigate to= "/pages/cook/Orders"/>},
       {path : 'cook/support' , element: <Navigate to= "/pages/cook/CookSupport"/>}
     ]
+  },
+  {
+    path: 'admin/home',
+    element: <AdminHome />,
+    children: [
+      { path: 'admin/home', element: <Navigate to="/pages/admin/AdminHome"/>},
+      { path: 'admin/menu', element: <Navigate to="/pages/admin/AdminMenu" /> },
+      { path : 'admin/support' , element: <Navigate to= "/pages/cook/AdminSupport"/>},
+      { path : 'admin/userHandle' , element: <Navigate to= "/pages/cook/AdminUserHandle"/>}
+    ]
+  },
+  {
+    path :'admin/menu',
+    element: <AdminMenu/>,
+    children : [
+      { path: 'admin/home', element: <Navigate to="/pages/admin/AdminHome"/>},
+      { path: 'admin/menu', element: <Navigate to="/pages/admin/AdminMenu" /> },
+      { path : 'admin/support' , element: <Navigate to= "/pages/cook/AdminSupport"/>},
+      { path : 'admin/userHandle' , element: <Navigate to= "/pages/cook/AdminUserHandle"/>}
+    ]
+  },
+  {
+    path :'admin/menu',
+    element: <AdminSupport/>,
+    children : [
+      { path: 'admin/home', element: <Navigate to="/pages/admin/AdminHome"/>},
+      { path: 'admin/menu', element: <Navigate to="/pages/admin/AdminMenu" /> },
+      { path : 'admin/support' , element: <Navigate to= "/pages/cook/AdminSupport"/>},
+      { path : 'admin/userHandle' , element: <Navigate to= "/pages/cook/AdminUserHandle"/>}
+  },
+  {
+    path :'admin/menu',
+    element: <AdminUserHandle/>,
+    children : [
+      { path: 'admin/home', element: <Navigate to="/pages/admin/AdminHome"/>},
+      { path: 'admin/menu', element: <Navigate to="/pages/admin/AdminMenu" /> },
+      { path : 'admin/support' , element: <Navigate to= "/pages/cook/AdminSupport"/>},
+      { path : 'admin/userHandle' , element: <Navigate to= "/pages/cook/AdminUserHandle"/>}
   },
   { path: '*', element: <Navigate to="/404" /> }];
 

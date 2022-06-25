@@ -16,10 +16,10 @@ import ContactSupportIcon from "@mui/icons-material/ContactSupport";
 import { useNavigate } from "react-router-dom";
 
 
-let pages = [ {title:'Menu', path: '/customer/menu'}, {title: 'Ordini', path: '/customer/ordini'}];
-let settings = [{title: 'Supporto', path: '/customer/support'}, { title:'Logout', path: '/'}];
+let pages = [ {title:'Home', path: '/admin/home'}, {title: 'Menu', path: '/admin/menu'}];
+let settings = [{ title:'Logout', path: '/'},{title: 'Supporto', path: '/admin/support'}];
 
-const ResponsiveAppBarCustomer = () => {
+const ResponsiveAppBarAdmin = () => {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
   const [anchorElUser, setAnchorElUser] = React.useState(null);
   const navigate = useNavigate();
@@ -48,7 +48,7 @@ const ResponsiveAppBarCustomer = () => {
             variant="h6"
             noWrap
             component="a"
-            href="/customer/menu"
+            href="/admin/home"
             sx={{
               mr: 2,
               display: { xs: 'none', md: 'flex' },
@@ -65,7 +65,7 @@ const ResponsiveAppBarCustomer = () => {
           <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
             <IconButton
               size="large"
-              aria-label="account of current user"
+              aria-label="account of admin"
               aria-controls="menu-appbar"
               aria-haspopup="true"
               onClick={handleOpenNavMenu}
@@ -174,4 +174,4 @@ const ResponsiveAppBarCustomer = () => {
     </AppBar>
   );
 };
-export default ResponsiveAppBarCustomer;
+export default ResponsiveAppBarAdmin;
