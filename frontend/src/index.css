@@ -128,3 +128,22 @@ h1{
   color : white;
   background-color: grey;
 }
+
+#deleteBtn , #editBtn {
+  margin : 5px
+}
+
+#deleteBtn {
+  color : white;
+  background-color: red;
+}
+#editBtn {
+  color: white;
+  background-color: darkcyan;
+}
+#uploadBtn {
+  margin : 10px;
+  background-color: darkblue;
+  align-self: flex-start;
+  ;
+}
