@@ -11,8 +11,8 @@ const signup = ({
   const onSuccess = (response) => {
     const { token } = response.data;
     dispatch(login(username));
-    setAuthToken(token);
     localStorage.setItem('token', token);
+    setAuthToken(token);
     navigate('/customer/menu', { replace: true });
     return response;
   };
@@ -23,8 +23,8 @@ const signup = ({
       if (data.username) actions.setFieldError('username', capitalizeFirstLetter(data.username));
       if (data.password) actions.setFieldError('password', capitalizeFirstLetter(data.password));
       if (data.email) actions.setFieldError('email');
-      if (data.firstName) actions.setFieldError('password', capitalizeFirstLetter(data.firstName));
-      if (data.lastName) actions.setFieldError('password', capitalizeFirstLetter(data.lastName));
+      if (data.firstName) actions.setFieldError('firstName', capitalizeFirstLetter(data.firstName));
+      if (data.lastName) actions.setFieldError('lastName', capitalizeFirstLetter(data.lastName));
     }
     return error;
   };
@@ -32,7 +32,7 @@ const signup = ({
   actions.setSubmitting(true);
 
   try {
-    const response = await axios.post(`${Config.url}/api/v1/auth/signup`, { username, password });
+    const response = await axios.post(`${Config.url}/api/v1/auth/sign-up`, { username, password, email, firstName, lastName });
     onSuccess(response);
   } catch (error) {
     onError(error);

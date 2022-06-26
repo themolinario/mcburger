@@ -13,7 +13,7 @@ function AdminHome() {
         <ResponsiveAppBarAdmin className="NavBar"/>
       </div>
       <Container className="HomeContainer" maxWidth="lg">
-        <h1 id="Welcome">Benvenuto su McBurger!</h1>
+        <h1>Benvenuto, Admin</h1>
         <h2 id="Welcome2">Accedi alla gestione del Menu</h2>
         <div>
           <Button id="MenuButton" variant="contained" color="secondary" onClick={() => {

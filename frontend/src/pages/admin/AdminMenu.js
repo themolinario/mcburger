@@ -28,9 +28,6 @@ function AdminMenu() {
       </div>
       <Container className="MenuContainer" maxWidth="lg">
         <div>
-          <div>
-            <h1>Benvenuto, Admin</h1>
-          </div>
           <Button onClick={handleToggle} variant="contained" color= "success" endIcon={<AddIcon/>}>
             Aggiungi elemento al Menu
           </Button>
