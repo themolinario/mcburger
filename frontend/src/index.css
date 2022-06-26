@@ -147,3 +147,15 @@ h1{
   align-self: flex-start;
   ;
 }
+
+#confBtn {
+  background-color: green;
+  color : white;
+}
+
+.cartConf {
+  display: flex;
+  justify-content: flex-end;
+  margin : 10px;
+
+}

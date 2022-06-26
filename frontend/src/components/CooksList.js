@@ -7,7 +7,6 @@ import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
 import Button from "@mui/material/Button";
-
 function createData(firstName, lastName) {
   return { firstName, lastName};
 }
@@ -16,7 +15,6 @@ const rows = [
   createData('Luca', 'Molinari'),
   createData('Angelo', 'Ladisa'),
 ];
-
 export default function CooksList() {
   return (
     <TableContainer component={Paper}>
@@ -47,3 +45,4 @@ export default function CooksList() {
     </TableContainer>
   );
 }
+

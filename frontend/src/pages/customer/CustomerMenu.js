@@ -7,6 +7,7 @@ import Button from "@mui/material/Button";
 import Backdrop from "@mui/material/Backdrop";
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import {useSelector} from "react-redux";
+import ShoppingCartList from "../../components/ShoppingCartList";
 
 
 function CustomerMenu() {
@@ -39,7 +40,15 @@ function CustomerMenu() {
           >
             <Container className="Cart" maxWidth="xs">
               <div>
-                <p>contenuto del carrello</p>
+                <h1>Contenuto del carrello</h1>
+              </div>
+            </Container>
+            <Container>
+              <div>
+                <ShoppingCartList/>
+              </div>
+              <div class = "cartConf">
+              <Button id = "confBtn">Conferma ordine</Button>
               </div>
             </Container>
           </Backdrop>

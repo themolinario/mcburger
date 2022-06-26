@@ -3,6 +3,7 @@ import Container from "@mui/material/Container";
 import '../../index.css';
 
 import ResponsiveAppBarCustomer from "../../components/ResponsiveAppBarCustomer";
+import CustomerOrdersTable from "../../components/CustomerOrdersTable";
 
 
 function Ordini() {
@@ -14,7 +15,7 @@ function Ordini() {
       <Container className="MenuContainer" maxWidth="lg">
         <h1>Le tue ordinazioni:  </h1>
         <div>
-
+          <CustomerOrdersTable/>
         </div>
       </Container>
     </div>
