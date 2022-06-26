@@ -91,7 +91,10 @@ function Signup() {
                 </Box>
               </div>
               <div>
-                <Button variant="contained" id="registerButton" onClick={handleSubmit} disabled={isSubmitting}>Register</Button>
+                <Button variant="contained" id="registerButton" onClick={() =>{
+                  handleSubmit();
+                  alert('Registrazione avvenuta con successo!')
+                }} disabled={isSubmitting}>Register</Button>
               </div>
             </Container>
           )}

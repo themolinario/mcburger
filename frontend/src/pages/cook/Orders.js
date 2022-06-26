@@ -13,8 +13,8 @@ function Orders() {
       </div>
       <Container className="OrdersContainer" maxWidth="lg">
         <hgroup>
-          <h1 id="Welcome">Benvenuto nella Hub Ordini</h1>
-          <h2 id="Welcome2">Gestisci gli ordini</h2>
+          <h1 id="Welcome">Benvenuto nella Hub dei Cuochi!</h1>
+          <h2 id="Welcome2">Da qui puoi gestire gli ordini:</h2>
         </hgroup>
         <div>
           <CookOrdersTable/>

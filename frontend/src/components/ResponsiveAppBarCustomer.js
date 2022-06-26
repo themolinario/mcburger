@@ -14,12 +14,15 @@ import MenuItem from '@mui/material/MenuItem';
 import LunchDiningIcon from "@mui/icons-material/LunchDining";
 import ContactSupportIcon from "@mui/icons-material/ContactSupport";
 import { useNavigate } from "react-router-dom";
+import {useDispatch} from "react-redux";
+import logout from "../actions/logout";
 
 
 let pages = [ {title:'Menu', path: '/customer/menu'}, {title: 'Ordini', path: '/customer/ordini'}];
-let settings = [{title: 'Supporto', path: '/customer/support'}, { title:'Logout', path: '/'}];
+let settings = [{title: 'Supporto', path: '/customer/support'}];
 
 const ResponsiveAppBarCustomer = () => {
+  const dispatch = useDispatch();
   const [anchorElNav, setAnchorElNav] = React.useState(null);
   const [anchorElUser, setAnchorElUser] = React.useState(null);
   const navigate = useNavigate();
@@ -39,7 +42,7 @@ const ResponsiveAppBarCustomer = () => {
     setAnchorElUser(null);
   };
 
-  return (
+  return  (
     <AppBar position="static" sx={{background:"black"}}>
       <Container maxWidth="xl">
         <Toolbar disableGutters>
@@ -167,6 +170,13 @@ const ResponsiveAppBarCustomer = () => {
                   <Typography textAlign="center">{settings.title}</Typography>
                 </MenuItem>
               ))}
+              <MenuItem key='Logout' onClick={() =>{
+                handleCloseUserMenu();
+                dispatch(logout);
+                navigate('/');
+              }}>
+                <Typography textAlign="center">Logout</Typography>
+              </MenuItem>
             </Menu>
           </Box>
         </Toolbar>
