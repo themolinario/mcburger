@@ -11,12 +11,15 @@ const login = ({
                }) => async (dispatch) => {
   const onSuccess = (response) => {
     const { token } = response.data;
-    const data = jwtDecode(token);
+    const data = jwtDecode(token) || {};
     dispatch({ type: 'login', token, user: data});
     setAuthToken(token);
     localStorage.setItem('token', token);
-    if (data.roles === 'root') {
-      navigate('/customer/menu', {replace: true});
+    console.log(data);
+    if (data.roles.includes('cook')) {
+      navigate('/cook/orders', {replace: true});
+    } else if (data.roles.includes('admin') || data.roles.includes('root')) {
+      navigate('/admin/home', {replace: true});
     } else {
       navigate('/customer/menu', {replace: true});
     }
