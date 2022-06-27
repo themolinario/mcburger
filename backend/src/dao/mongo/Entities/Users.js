@@ -49,6 +49,10 @@ const findUserByUsername = async (username) => {
   return User.findOne({ username });
 };
 
+const findUsersByRoles = async (roles) => {
+  return User.find({ roles });
+};
+
 const findUserByEmail = async (email) => {
   return User.findOne({ email });
 };
@@ -97,7 +101,7 @@ const countUsersByUsername = async (username = '') => {
 };
 
 const Users = {
-  updateRootUser, findUserByUsername, insertUser, findUserById, findUsers, findUserByEmail, removeUserById, countUsersByUsername,
+  updateRootUser, findUserByUsername, insertUser, findUserById, findUsers, findUserByEmail, removeUserById, countUsersByUsername, findUsersByRoles,
 };
 
 export default Users;

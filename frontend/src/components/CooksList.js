@@ -7,15 +7,22 @@ import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
 import Button from "@mui/material/Button";
-function createData(firstName, lastName) {
-  return { firstName, lastName};
-}
 
-const rows = [
-  createData('Luca', 'Molinari'),
-  createData('Angelo', 'Ladisa'),
-];
+import searchCook from "../actions/admin/searchCook";
+import {useDispatch, useSelector} from "react-redux";
+import {useEffect} from "react";
+import removeCook from "../actions/admin/removeCook";
+import {Formik} from "formik";
+
+
+
 export default function CooksList() {
+  const dispatch = useDispatch();
+  const cooks = useSelector(state => state.cooks.cooks || []);
+  useEffect(() => {
+    dispatch(searchCook('cook'))
+  }, [dispatch]);
+
   return (
     <TableContainer component={Paper}>
       <Table sx={{ minWidth: 650 }} aria-label="simple table">
@@ -27,7 +34,7 @@ export default function CooksList() {
           </TableRow>
         </TableHead>
         <TableBody>
-          {rows.map((row) => (
+          {cooks.map((row) => (
             <TableRow
               key={row.firstName}
             >
@@ -36,7 +43,24 @@ export default function CooksList() {
               </TableCell>
               <TableCell >{row.lastName}</TableCell>
               <TableCell>
-                <Button variant="contained" color="error">Rimuovi</Button>
+                <Formik
+                  initialValues={{}}
+                  onSubmit={(values, actions) => {
+                    dispatch(removeCook({
+                      id: row._id,
+                      firstName: row.firstName,
+                      lastName: row.lastName,
+                      actions,
+                    }));
+                  }}
+                >
+                  {({
+                      handleSubmit,
+                      isSubmitting,
+                    }) => (
+                <Button variant="contained" color="error" disabled={isSubmitting} onClick={handleSubmit}>Rimuovi</Button>
+                    )}
+                </Formik>
               </TableCell>
             </TableRow>
           ))}

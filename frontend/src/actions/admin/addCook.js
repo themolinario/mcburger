@@ -16,7 +16,7 @@ const addCook = ({
     actions.setFieldValue('email', '');
     actions.setFieldValue('password', '');
     dispatch({ type: 'users-created', user });
-    dispatch({ type: 'snack', content: `user @${user.username} created`, severity: 'success' });
+    dispatch({ type: 'snack', content: `cuoco @${user.username} aggiunto `, severity: 'success' });
     return response;
   };
 

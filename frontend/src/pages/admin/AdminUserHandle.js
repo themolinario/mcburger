@@ -14,6 +14,7 @@ import { Formik } from 'formik';
 import addCook from "../../actions/admin/addCook";
 
 
+
 function AdminUserHandle() {
   const dispatch = useDispatch();
   const [open, setOpen] = React.useState(false);
@@ -113,7 +114,7 @@ function AdminUserHandle() {
                 <div>
                   <Button variant="contained" id="registerButton" onClick={() => {
                     handleSubmit();
-                    alert('Cuoco aggiunto con successo!');
+                    alert('cuoco aggiunto con successo!')
                   }} disabled={isSubmitting}>Aggiungi</Button>
                 </div>
               </Container>

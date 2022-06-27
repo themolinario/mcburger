@@ -5,6 +5,7 @@ import Info from './Info';
 import User from './User';
 import Product from "./Product";
 import Order from "./Order";
+import File from "./File";
 
 const Models = {
   AuthCode,
@@ -13,7 +14,8 @@ const Models = {
   Info,
   User,
   Product,
-  Order
+  Order,
+  File
 };
 
 export default Models;

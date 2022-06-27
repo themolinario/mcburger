@@ -6,8 +6,25 @@ import {fries} from './menuImages/images';
 import Button from "@mui/material/Button";
 import DeleteIcon from '@mui/icons-material/Delete';
 import EditIcon from '@mui/icons-material/Edit';
+import Container from "@mui/material/Container";
+import Box from "@mui/material/Box";
+import TextField from "@mui/material/TextField";
+import UploadButton from "./UploadButton";
+import Backdrop from "@mui/material/Backdrop";
+import uploadImage from "../actions/admin/uploadImage";
+import {useDispatch, useSelector} from "react-redux";
+import config from "../config";
 
 export default function MenuImageListAdmin() {
+  const dispatch = useDispatch();
+  const [open, setOpen] = React.useState(false);
+  const file = useSelector(state => state.files.file || {});
+  const handleClose = () => {
+    setOpen(false);
+  };
+  const handleToggle = () => {
+    setOpen(!open);
+  };
   return (
     <ImageList sx={{ width: "auto", height: "auto" }}>
       {itemData.map((item) => (
@@ -25,7 +42,66 @@ export default function MenuImageListAdmin() {
             position="below"
           />
           <Button variant="contained" id = 'deleteBtn' endIcon={<DeleteIcon/>}>Elimina</Button>
-          <Button variant="contained" id = 'editBtn' endIcon={<EditIcon/>}>Modifica</Button>
+          <Button onClick={handleToggle} variant="contained" id = 'editBtn' endIcon={<EditIcon/>}>Modifica</Button>
+          <Backdrop
+            sx={{ color: '#fff', zIndex: (theme) => theme.zIndex.drawer + 1 }}
+            open={open}
+          >
+
+            <Container className="Cart" maxWidth="xs">
+              <Button onClick={handleClose} variant="contained">
+                X
+              </Button>
+              <div className="Sign-UpBox">
+                <Container>
+                  <div>
+                    <Box sx={{display: 'flex', alignItems: 'flex-end'}}>
+                      <TextField id="title" label="Nome Prodotto" variant="standard"/>
+                    </Box>
+                  </div>
+                  <div>
+                    <Box sx={{display: 'flex', alignItems: 'flex-end'}}>
+                      <TextField id="description" label="Descrizione" variant="standard"/>
+                    </Box>
+                  </div>
+                  <div>
+                    <Box sx={{display: 'flex', alignItems: 'flex-end'}}>
+                      <TextField id="price" label="Prezzo" variant="standard"/>
+                    </Box>
+                  </div>
+                  <div>
+                    <Box sx={{display: 'flex', alignItems: 'flex-end'}}>
+                      <TextField id="discountedPrice" label="Prezzo Scontato" variant="standard"/>
+                    </Box>
+                  </div>
+                  <div>
+                    <Box sx={{display: 'flex', alignItems: 'flex-end'}}>
+                      <TextField id="currency" label="Valuta" variant="standard" />
+                    </Box>
+                  </div>
+                  <div>
+                    <Box sx={{display: 'flex', alignItems: 'flex-end' , margin : 'auto'}}>
+                      <UploadButton/>
+                    </Box>
+                  </div>
+                  <div>
+                      <img src={config.url + '/api/v1/files/get/' + file.id} style={{
+                        width: 160,
+                        height: 90,
+                        objectFit: 'cover',
+                        backgroundColor: 'purple'
+                      }} alt="fammoc"/>
+                  </div>
+
+                  <div>
+                    <Button variant="contained" id="registerButton">
+                      Aggiungi
+                    </Button>
+                  </div>
+                </Container>
+              </div>
+            </Container>
+          </Backdrop>
         </ImageListItem>
       ))}
     </ImageList>

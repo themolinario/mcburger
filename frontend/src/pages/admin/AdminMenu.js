@@ -10,9 +10,12 @@ import Backdrop from "@mui/material/Backdrop";
 import Box from "@mui/material/Box";
 import TextField from "@mui/material/TextField";
 import UploadButton from "../../components/UploadButton";
+import config from "../../config";
+import {useSelector} from "react-redux";
 
 
 function AdminMenu() {
+  const file = useSelector(state => state.files.file || {});
 
   const [open, setOpen] = React.useState(false);
   const handleClose = () => {
@@ -72,6 +75,19 @@ function AdminMenu() {
                       <UploadButton/>
                     </Box>
                   </div>
+
+                  <Box>
+                    <img src={config.url + '/api/v1/files/get/' + file.id} style={{
+                      width: 160,
+                      minWidth: 160,
+                      height: 160,
+                      minHeight: 160,
+                      backgroundColor: 'purple',
+                      objectFit: 'cover'
+                    }} alt="fammoc"/>
+                  </Box>
+
+
                   <div>
                     <Button variant="contained" id="registerButton">Aggiungi</Button>
                   </div>
