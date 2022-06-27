@@ -2,11 +2,9 @@ import * as React from "react";
 import ResponsiveAppBarAdmin from "../../components/ResponsiveAppBarAdmin";
 import Container from "@mui/material/Container";
 import '../../index.css';
-import Button from "@mui/material/Button";
-import { useNavigate } from "react-router-dom";
+import HomeAdminButton from "../../components/HomeAdminButton";
 
 function AdminHome() {
-  const navigate = useNavigate();
   return (
     <div className="Home">
       <div>
@@ -16,12 +14,9 @@ function AdminHome() {
         <h1>Benvenuto, Admin</h1>
         <h2 id="Welcome2">Accedi alla gestione del Menu</h2>
         <div>
-          <Button id="MenuButton" variant="contained" color="secondary" onClick={() => {
-            navigate('/admin/menu');
-          }}>Menu</Button>
+          <HomeAdminButton/>
         </div>
         <div>
-
         </div>
       </Container>
     </div>
