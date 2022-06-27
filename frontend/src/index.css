@@ -6,21 +6,25 @@
   background: white;
   padding: 20px;
   align-items: center;
+  border: 2px solid black
 }
 
 .Sign-UpBox {
   max-width: 330px;
-  margin: 100px auto;
+  margin: 60px auto;
   display: flex;
   flex-direction: column;
   background: white;
   padding: 10px;
-  align-items: center
+  align-items: center;
+  border: 2px solid black
 }
 
 #username , #email , #firstName , #lastName{
   padding: 10px;
   display: flex;
+  font-family: Arial, sans-serif;
+  font-size: larger;
 }
 
 #password{
@@ -99,6 +103,12 @@ h1{
   display: flex;
 }
 
+#MenuBtn{
+  display: flex;
+  margin: auto;
+  border : 5px solid purple;
+}
+
 #Welcome2{
   font-family: monospace;
   font-weight: 700;
@@ -108,10 +118,14 @@ h1{
   display: flex;
 }
 
-#MenuButton{
-  margin: 50px auto;
-  padding: 20px 40px 20px 40px;
+#Welcome3{
+  font-family: monospace;
+}
+
+#Welcome4{
   display: flex;
+  margin : auto;
+  font-family: monospace;;
 }
 
 #NotReady {
